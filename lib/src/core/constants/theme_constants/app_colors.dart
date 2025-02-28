@@ -19,7 +19,7 @@ class AppColors {
   /// basic colors
   static final Color whiteColor = Color(0xffFAFAFA);
   static final Color pearlColor = Color(0xffE9DCC9);
-  static final Color blackColor = Color(0xff0A0A0A);
+  static final Color blackColor = Color(0xff1D1D1D);
   static final Color greyColor = Color(0xff777B7E);
 
   /// misc colors

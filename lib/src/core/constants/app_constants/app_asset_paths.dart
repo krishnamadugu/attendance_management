@@ -12,5 +12,5 @@ class AppAssetPaths {
   /// image file paths
   static const String kNoImgFoundAssetPath =
       "assets/images/misc/imgNotFound.png";
-  static const String kAppLogoAssetPath = "assets/images/misc/app_logo.jpg";
+  static const String kAppLogoAssetPath = "assets/images/misc/splash_image.jpg";
 }
