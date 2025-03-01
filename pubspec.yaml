@@ -28,6 +28,7 @@ dependencies:
   equatable: ^2.0.7
   skeletonizer: ^1.4.3
   flutter_dotenv: ^5.2.1
+  modal_bottom_sheet: ^3.0.0
   lottie: ^3.3.1
 
 dev_dependencies:

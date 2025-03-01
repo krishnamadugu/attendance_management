@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static const Color greenColor = Color(0xff34C724);
-  static const Color redColor = Color(0xffF54A45);
-
   /// theme colors
   static final Color primaryColor = Colors.greenAccent;
   static final Color accentColor = Colors.lightGreenAccent;
@@ -21,6 +18,8 @@ class AppColors {
   static final Color pearlColor = Color(0xffE9DCC9);
   static final Color blackColor = Color(0xff1D1D1D);
   static final Color greyColor = Color(0xff777B7E);
+  static const Color greenColor = Color(0xff34C724);
+  static const Color redColor = Color(0xffF54A45);
 
   /// misc colors
   static final Color warningColor = Color(0xffFF8800);

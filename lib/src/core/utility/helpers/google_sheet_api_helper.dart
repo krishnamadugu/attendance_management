@@ -11,21 +11,21 @@ class GSheetApiHelper {
 
   static final GSheets _gSheets = GSheets(_credentials);
 
-  static Worksheet? _attendeeWorkSheet;
-  static Worksheet? _empWorkSheet;
+  static Worksheet? attendeeWorkSheet;
+  static Worksheet? empWorkSheet;
 
   static Future initialize() async {
     try {
       final spreadSheet = await _gSheets.spreadsheet(_sheetId);
-      _attendeeWorkSheet =
+      attendeeWorkSheet =
           await _getWorkSheet(spreadSheet, title: 'attendance_logs');
-      _empWorkSheet = await _getWorkSheet(spreadSheet, title: 'emp_list');
+      empWorkSheet = await _getWorkSheet(spreadSheet, title: 'emp_list');
 
       final attendeeFirstRow = GSheetAttendeeFields.getFields();
-      _attendeeWorkSheet!.values.insertRow(1, attendeeFirstRow);
+      attendeeWorkSheet!.values.insertRow(1, attendeeFirstRow);
 
       final empFirstRow = GSheetEmpFields.getFields();
-      _empWorkSheet!.values.insertRow(1, empFirstRow);
+      empWorkSheet!.values.insertRow(1, empFirstRow);
     } catch (e) {
       debugPrint("GSheet Exception ---> $e");
     }
@@ -45,6 +45,15 @@ class GSheetApiHelper {
 
   static Future getById({required Worksheet worksheet, required int id}) async {
     final response = worksheet.values.map.rowByKey(id, fromColumn: 1);
+    return response;
+  }
+
+  static Future getValueByKey({
+    required Worksheet worksheet,
+    required int id,
+    required String key,
+  }) async {
+    final response = worksheet.values.valueByKeys(rowKey: id, columnKey: key);
     return response;
   }
 
